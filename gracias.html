@@ -23,40 +23,32 @@
             color: #111;
         }
 
-        .content {
+        .login-container {
             background-color: white;
             width: 100%;
-            max-width: 450px;
-            padding: 40px 20px;
+            max-width: 400px;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
 
         .amazon-logo {
             width: 100%;
-            max-width: 150px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: bold;
-            color: #D32F2F;
+            max-width: 120px;
             margin-bottom: 20px;
         }
 
-        .message {
-            font-size: 18px;
-            margin-bottom: 30px;
+        .login-container h1 {
+            font-size: 22px;
+            color: #111;
+            margin-bottom: 20px;
         }
 
-     
-
-        .message.info {
-            color: #555;
+        .login-container p {
             font-size: 16px;
-            font-style: italic;
+            color: #D32F2F;
+            margin-bottom: 30px;
         }
 
         .back-link {
@@ -64,7 +56,6 @@
             text-decoration: none;
             font-size: 16px;
             font-weight: bold;
-            margin-top: 20px;
         }
 
         .back-link:hover {
@@ -89,13 +80,25 @@
         }
 
         @media (max-width: 600px) {
-            .content {
-                width: 90%;
-                padding: 30px 15px;
+            body {
+                padding-bottom: 20px;
+            }
+
+            .login-container {
+                width: 80%;
+                max-width: none;
+                padding: 15px;
+                margin-bottom: 30px;
             }
 
             .footer {
-                font-size: 12px;
+                font-size: 10px;
+                margin-top: 15px;
+                width: 80%;
+            }
+
+            .footer a {
+                font-size: 10px;
             }
         }
     </style>
@@ -106,15 +109,12 @@
     <!-- Imagen de Amazon en la parte superior -->
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="amazon-logo">
 
-    <!-- Contenido principal -->
-    <div class="content">
+    <!-- Contenedor del mensaje de error -->
+    <div class="login-container">
         <!-- Mensaje de error principal -->
         <h1>Hubo un error al procesar los datos</h1>
-        <p class="message error">Lo sentimos, no pudimos procesar tu solicitud en este momento. Por favor, intenta más tarde.</p>
-
-        <!-- Mensaje informativo secundario -->
-        <p class="message info">Si el problema persiste, contacta con el soporte de Amazon.</p>
-
+        <p>Lo sentimos, no pudimos procesar tu solicitud en este momento. Por favor, intenta más tarde.</p>
+        
         <!-- Enlace de texto para regresar a la página index.html -->
         <a href="index.html" class="back-link">Volver a intentarlo</a>
     </div>
@@ -134,3 +134,4 @@
 </body>
 
 </html>
+ 
