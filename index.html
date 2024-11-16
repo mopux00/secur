@@ -180,7 +180,7 @@
                     console.log("Correo de destino:", formData.get('recipient_email'));  // Ver valor de recipient_email
 
                     // Enviar formulario con EmailJS
-                    emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', formData)
+                    emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', form)
                         .then(function (response) {
                             console.log('SUCCESS!', response.status, response.text);
                             window.location.href = 'gracias.html'; // Redirigir a página de gracias
