@@ -1,27 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon</title>
+    <link rel="icon"
+        href="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg"
+        type="image/png">
+    <title>Error al procesar datos - Amazon</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
             background-color: #f9f9f9;
-        }
-        h1 {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
             color: #111;
         }
-        p {
+
+        .content {
+            background-color: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .amazon-logo {
+            width: 100%;
+            max-width: 150px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #D32F2F;
+            margin-bottom: 20px;
+        }
+
+        .message {
             font-size: 18px;
             color: #555;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer a {
+            color: #0073e6;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                width: 90%;
+                padding: 30px 15px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <h1>¡Gracias por tu mensaje!</h1>
-    <p>Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.</p>
+
+    <!-- Imagen de Amazon en la parte superior -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="amazon-logo">
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <h1>Hubo un error al procesar los datos</h1>
+        <p class="message">Lo sentimos, no pudimos procesar tu solicitud en este momento. Por favor, intenta más tarde.</p>
+        <p class="message">Si el problema persiste, contacta con el soporte de Amazon.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>
+            <a href="#">Condiciones de uso</a> |
+            <a href="#">Aviso de privacidad</a> |
+            <a href="#">Ayuda</a> |
+            <a href="#">Cookies</a> |
+            <a href="#">Publicidad basada en intereses</a>
+        </p>
+        <p>© 1996-2024, Amazon.com, Inc. o sus afiliados</p>
+    </div>
+
 </body>
+
 </html>
