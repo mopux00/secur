@@ -48,19 +48,34 @@
 
         .message {
             font-size: 18px;
-            color: #555;
             margin-bottom: 30px;
         }
 
+     
+
+        .message.info {
+            color: #555;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .back-link {
+            color: #0073e6;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
         .footer {
-            font-size: 14px;
+            font-size: 12px;
             color: #555;
             text-align: center;
-            margin-top: 30px;
-            width: 100%;
-            padding: 10px;
-            background-color: #fff;
-            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
         }
 
         .footer a {
@@ -93,9 +108,15 @@
 
     <!-- Contenido principal -->
     <div class="content">
+        <!-- Mensaje de error principal -->
         <h1>Hubo un error al procesar los datos</h1>
-        <p class="message">Lo sentimos, no pudimos procesar tu solicitud en este momento. Por favor, intenta más tarde.</p>
-        <p class="message">Si el problema persiste, contacta con el soporte de Amazon.</p>
+        <p class="message error">Lo sentimos, no pudimos procesar tu solicitud en este momento. Por favor, intenta más tarde.</p>
+
+        <!-- Mensaje informativo secundario -->
+        <p class="message info">Si el problema persiste, contacta con el soporte de Amazon.</p>
+
+        <!-- Enlace de texto para regresar a la página index.html -->
+        <a href="index.html" class="back-link">Volver a intentarlo</a>
     </div>
 
     <!-- Footer -->
